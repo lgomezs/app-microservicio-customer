@@ -1,0 +1,18 @@
+spring:
+# Discovery Server Access
+  cloud:
+    inetutils:
+     default-hostname: ${HOSTNAME:localhost}
+eureka:
+  instance:
+    hostname: ${HOSTNAME:localhost}  
+  client:
+    serviceUrl:
+      defaultZone: ${URI_DISCOVERY_SERVER}
+
+# HTTP Server
+server:
+  port: ${PORT:8083}   # HTTP (Tomcat) port
+  servlet:
+    context-path: /identity  
+

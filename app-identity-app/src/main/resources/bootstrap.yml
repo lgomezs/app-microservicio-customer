@@ -1,0 +1,12 @@
+encrypt:  
+  key: ${KEY_ENCRYPT}
+    
+spring:
+  application:
+    name: app-identity-app 
+  cloud:
+    config:
+       failFast: true
+       profile: ${PROFILE}
+       uri: ${URI_CONFIG_SERVER}       
+                

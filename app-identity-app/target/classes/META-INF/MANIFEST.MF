@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: app-identity-app
+Implementation-Version: 0.0.1
+Built-By: everis
+Implementation-Vendor-Id: com.example.mongo
+Build-Jdk: 1.8.0_151
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/app-identity/app-identity-app
+Created-By: Maven Integration for Eclipse
+

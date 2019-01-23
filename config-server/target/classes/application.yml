@@ -1,0 +1,50 @@
+server:
+  port: ${PORT:8888}
+
+encrypt:
+  key: 2ff929259f40afb1f61b6abe9ae5373623603a2dc1eeb584d16852e91f6df196
+  
+logging:
+  file: logs/${spring.application.name}.log
+  level:
+    com.netflix.discovery: 'OFF'
+    org.springframework.cloud: 'DEBUG'
+    com.atsistemas: 'DEBUG'   
+
+spring:
+  application:
+    name: config-server
+  profiles:
+    #active: ${SPRING_PROFILES_ACTIVE}
+    active: github
+    
+---    
+spring:
+  profiles: github
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/lgomezs/spring-repositorio-identity-app
+         
+---
+spring:
+  profiles: native
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: file:///c:/development/spring-respository
+          failOnError : false
+          
+---
+spring:
+  profiles: local-git
+  cloud:
+    config:
+      server:
+        git:
+#         uri: file:///${HOME}/cygnus-config
+         uri: file:///D:/development/spring-respository
+
+
