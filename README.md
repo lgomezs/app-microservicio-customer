@@ -77,11 +77,15 @@ az keyvault set-policy --spn ddb86841-572d-4dd9-b8cc-f1459c4c7a81 --name 	keyvau
 
   --create secret
     az keyvault secret set --vault-name 'keyvaultrippletest' --name 'kvsecretcdbripple' \
-                       --value   	'mongodb://dbmongoripple:TDTBYv0ziOZyWEEAy37G5oeMvBMd1UPaar7jESfN6B6PP1TEWa1J9REzpa7Mjwio21PJVEcS8ifapm5BpVo		         uNg==@dbmongoripple.documents.azure.com:10255/?ssl=true&replicaSet=globaldb'
+                       --value   	'mongodb://dbmongoripple:XXXTDTBYv0ziOZyWEEAy37G5oeMvBMd1UPaar7jESfN6B6PP1TEWa1J9REzpa7Mjwio21PJVEcS8ifapm5PBpVo		         uNg==@dbmongoripple.documents.azure.com:10255/?ssl=true&replicaSet=globaldb'
    
    	 
  # Iniciar el aplicativo:
    mvn spring-boot run
+   
+   endpoint:
+   	http://localhost:8083/identity/listCustomer
+   	
    	 
   
   

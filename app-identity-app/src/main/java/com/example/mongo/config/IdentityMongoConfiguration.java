@@ -31,8 +31,11 @@ public class IdentityMongoConfiguration {
 	public MongoClient mongoClient(String dbCollection) throws UnknownHostException {
 
 		KeyVaultClient keyVaultClient = new KeyVaultClient(new KeyVaultCredential(
-				keyVaultConfiguration.getKeyVaultClientId(), keyVaultConfiguration.getKeyVaultClientKey()));
+				keyVaultConfiguration.getKeyVaultClientId(), keyVaultConfiguration.getKeyVaultClientKey()+"="));
+		System.out.println("keyVaultConfiguration.getKeyVaultClientId() "+ keyVaultConfiguration.getKeyVaultClientId());
+		System.out.println("keyVaultConfiguration.getKeyVaultClientKey() "+ keyVaultConfiguration.getKeyVaultClientKey());
 		SecretBundle secretBundle = keyVaultClient.getSecret(keyVaultConfiguration.getKeyVaultURI(), mongoSecretName);
+		System.out.println("secretBundle :  "+ secretBundle.value());
 		MongoClientOptions.Builder optionsBuilder = new MongoClientOptions.Builder();
 		optionsBuilder.socketTimeout(10000);
 		optionsBuilder.maxConnectionIdleTime(60000);
